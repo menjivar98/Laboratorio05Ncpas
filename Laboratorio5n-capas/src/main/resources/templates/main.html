@@ -13,12 +13,14 @@
 			<th>Edad</th>
 			<th>Estado</th>
 		</thead>
-		<th:block th:each="estudiante, row:${estudiantes}">
-			<th th:text="${estudiante.codigoEstudiante}">
-			<th th:text="${estudiante.nombre}">
-			<th th:text="${estudiante.apellido}">
-			<th th:text="${estudiante.edad}">
-			<th th:text="${estudiante.estadoDelegate}">
+		<th:block th:each="estudiante,row:${estudiantes}">
+			<tr>
+				<th th:text="${estudiante.codigoEstudiante}">
+				<th th:text="${estudiante.nombre}">
+				<th th:text="${estudiante.apellido}">
+				<th th:text="${estudiante.edad}">
+				<th th:text="${estudiante.estadoDelegate}">
+			<tr>	
 		</th:block>
 	</table>
 	<br>
