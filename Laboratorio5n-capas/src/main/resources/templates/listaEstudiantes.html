@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Lista de estudiantes</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<table>
@@ -24,20 +24,9 @@
 		</th:block>
 	</table>
 	<br>
-		<form th:action="@{/mostrarEstudiante}" method="post">
-		<label>Buscar por codigo de estudiante: </label> <br> 
-		<input type="number" name="codigo"><br>
-		<input type="submit" value="Buscar"><br>
+	<form th:action="@{/estudiante}">
+		<input type="submit" value="Regresar">
 	</form>
-	<br>
-	
-	<form th:action="@{/insertarEstudiante}">
-		<input type="submit" value="Insertar nuevo estudiante">
-	</form><br>
-	
-	<form th:action="@{/borrarEstudiante}" method="post">
-		<label>Borrar estudiante por codigo: </label><input type="number" name="codigo"> <br>
-		<input type="submit" value="Borrar">
-	</form>
+
 </body>
 </html>
