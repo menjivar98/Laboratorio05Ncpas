@@ -22,25 +22,25 @@ public class Estudiante {
 	@Id
 	@Column(name="id_estudiante")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer codigoEstudiante;
+	private Integer codigoestudiante;
 	
 	@Size(message="El campo nombre no debe contener mas de 30 de caracteres", max=30)
 	@NotEmpty(message="Este campo no puede estar vacio")
 	@Column(name="nombre")
-	private String Nombre;
+	private String nombre;
 	
 	@Size(message="El campo nombre no debe contener mas de 30 de caracteres", max=30)
 	@NotEmpty(message="Este campo no puede estar vacio")
 	@Column(name="apellido")
-	private String Apellido;
+	private String apellido;
 	
 	@NotNull(message="El campo no puede estar vacio")
 	@Min(value=18,message="No puede ser menos a 18")
 	@Column(name="edad")
-	private Integer Edad;
+	private Integer edad;
 	
 	@Column(name="estado")
-	private Boolean Estado;
+	private Boolean estado;
 	
 	@OneToMany(mappedBy="estudiante" , fetch=FetchType.EAGER)
 	private List <Computadora> computadoras;
@@ -56,50 +56,50 @@ public class Estudiante {
 	}
 
 	public Integer getCodigoEstudiante() {
-		return codigoEstudiante;
+		return codigoestudiante;
 	}
 
-	public void setCodigoEstudiante(Integer codigoEstudiante) {
-		this.codigoEstudiante = codigoEstudiante;
+	public void setCodigoEstudiante(Integer codigoestudiante) {
+		this.codigoestudiante = codigoestudiante;
 	}
 
-	public String getNombre() {
-		return Nombre;
+	public String getnombre() {
+		return nombre;
 	}
 
-	public void setNombre(String nombre) {
-		Nombre = nombre;
+	public void setnombre(String nombre) {
+		nombre = nombre;
 	}
 
 	public String getApellido() {
-		return Apellido;
+		return apellido;
 	}
 
 	public void setApellido(String apellido) {
-		Apellido = apellido;
+		apellido = apellido;
 	}
 
 	public Integer getEdad() {
-		return Edad;
+		return edad;
 	}
 
 	public void setEdad(Integer edad) {
-		Edad = edad;
+		edad = edad;
 	}
 
 	public Boolean getEstado() {
-		return Estado;
+		return estado;
 	}
 
 	public void setEstado(Boolean estado) {
-		Estado = estado;
+		estado = estado;
 	}
 	
 	//Funciones delegate
 	public String getEstadoDelegate() {
-		if(this.Estado == null)return "";
+		if(this.estado == null)return "";
 		else {
-			if(this.Estado) 
+			if(this.estado) 
 				return "Activo";
 			else {
 				return "Inactivo";
@@ -110,11 +110,11 @@ public class Estudiante {
 
 	public Estudiante(Integer codigoEstudiante, String nombre, String apellido, Integer edad, Boolean estado) {
 		super();
-		this.codigoEstudiante = codigoEstudiante;
-		Nombre = nombre;
-		Apellido = apellido;
-		Edad = edad;
-		Estado = estado;
+		this.codigoestudiante = codigoEstudiante;
+		nombre = nombre;
+		apellido = apellido;
+		edad = edad;
+		estado = estado;
 	}
 	
 	public Estudiante() {}
