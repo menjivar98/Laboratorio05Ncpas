@@ -117,7 +117,6 @@ public class MainController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("estudiante", new Estudiante());
 		mav.setViewName("agregarEstudiante");
-	
 		return mav;
 	}
 	
