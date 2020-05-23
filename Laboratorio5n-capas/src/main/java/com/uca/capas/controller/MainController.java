@@ -43,7 +43,7 @@ public class MainController {
 	}
 	
 	
-	@RequestMapping(value = "/mostrarEstudiante", method=RequestMethod.POST)
+	/*@RequestMapping(value = "/mostrarEstudiante", method=RequestMethod.POST)
 	public ModelAndView findOne(@RequestParam(value="codigo") int id) {
 		ModelAndView mav = new ModelAndView();
 		Estudiante estudiante = null;
@@ -57,7 +57,7 @@ public class MainController {
 		mav.setViewName("estudiante");
 		
 		return mav;
-	}
+	}*/
 	
 	@PostMapping("/save")
 	public ModelAndView guardar(@Valid @ModelAttribute Estudiante estudiante, BindingResult result) {
@@ -118,6 +118,24 @@ public class MainController {
 		mav.addObject("estudiante", new Estudiante());
 		mav.setViewName("agregarEstudiante");
 	
+		return mav;
+	}
+	
+	@RequestMapping("/")
+	public ModelAndView Main() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("main");
+		return mav;
+	}
+	
+	@RequestMapping(value="/mostrarEstudiante",  method=RequestMethod.POST)
+	public ModelAndView findOneC (@RequestParam(value="codigo") int id) {
+		
+		ModelAndView mav = new ModelAndView();
+		Estudiante estudiante = estudianteService.findOne(id);
+		mav.addObject("estudiante", estudiante);
+		mav.setViewName("estudiante");
+		
 		return mav;
 	}
 	

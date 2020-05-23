@@ -5,7 +5,9 @@
 <title>Lista de estudiantes</title>
 </head>
 <body>
-	<table>
+	<!--  
+	
+		<table>
 		<thead>
 			<th>Codigo Estudiante </th>
 			<th>Nombre</th>
@@ -34,10 +36,14 @@
 	<form th:action="@{/insertarEstudiante}">
 		<input type="submit" value="Insertar nuevo estudiante">
 	</form><br>
+		
 	
-	<form th:action="@{/borrarEstudiante}" method="post">
-		<label>Borrar estudiante por codigo: </label><input type="number" name="codigo"> <br>
-		<input type="submit" value="Borrar">
+	
+	
+	-->
+	<form th:action="@{/mostrarEstudiante}" method="post">
+		<label>Buscar por codigo de estudiante: </label><input type="number" name="codigo"> <br>
+		<input type="submit" value="Buscar">
 	</form>
 </body>
 </html>
